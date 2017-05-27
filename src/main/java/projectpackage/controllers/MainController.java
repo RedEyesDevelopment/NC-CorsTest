@@ -2,6 +2,7 @@ package projectpackage.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,7 +22,7 @@ public class MainController {
     private final String PREFIX="/fuck/";
 
     @ResponseBody
-    @RequestMapping(value = PREFIX + "gimme")
+    @RequestMapping(value = PREFIX + "gimme", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
     public ResponseEntity getModelViaAjax() {
         Model model = modelService.getStaticModel();
         ResponseEntity result = new ResponseEntity(model, HttpStatus.OK);

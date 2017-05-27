@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Yourapp</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
@@ -8,4 +9,21 @@
 FUCKUBITCH!
 <img src="/res/1.jpeg" alt="альтернативный текст"/>
 </body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+            $.getJSON("/fuck/gimme", function(result){
+            display(result)
+
+    });
+    });
+
+    function display(data) {
+		var json = "<h4>Ajax Response</h4><pre>"
+				+ JSON.stringify(data, null, 4) + "</pre>";
+		$('#feedback').html(json);
+	}
+</script>
+<div id="feedback"></div>
 </html>
+

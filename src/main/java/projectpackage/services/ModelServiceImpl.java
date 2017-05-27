@@ -16,6 +16,6 @@ public class ModelServiceImpl implements ModelService {
         model.setId(11);
         model.setDateOfCreation(new Date(System.currentTimeMillis()));
         model.setStringData("DIEBITCH");
-        return null;
+        return model;
     }
 }
